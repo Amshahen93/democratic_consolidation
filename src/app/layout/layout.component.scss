@@ -1,0 +1,11 @@
+.scrollableContent{
+    height: 100vh;
+    overflow-y: auto;
+    position: relative;
+    z-index: 201;
+}
+.header-content{
+    position: fixed;
+    width: 100vw;
+    z-index: 200;
+}

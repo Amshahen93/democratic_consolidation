@@ -1,0 +1,80 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 p-0 homeBackground">
+        <div class="background"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 p-0 pt-5">
+            <div class = 'textSimple textCenter roboto pt-5'>Testimonial</div>
+            <div class = 'bigText textCenter'>Happy Clients</div>
+        </div>
+    </div>
+    <div class = 'row '>
+        <div class="col-12 mt-5 P-0">
+            <app-testimonial [sliderData] = 'testimonialData'></app-testimonial>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 mt-5 p-0">
+            <div class="container">
+                <div class="row">
+                    <div class="projectImageContent" 
+                    [ngClass]="{'col-md-8 col-12': project.imageType === 'large', 'col-md-4 col-12':  project.imageType === 'tall'}" 
+                    *ngFor = 'let project of projects; let i = index'>
+                        <img class = 'imageProject' [src] = 'project.img'>
+                        <div class = 'projectTextContent unselectable'>
+                            <h4 class = 'projectTitle'>{{project.title}}</h4>
+                            {{project.subTitle}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row pt-5 pb-5">
+        <div class="col-12 p-0">
+            <div class="container pt-5 pb-5">
+                <div class="row">
+                    <div class="col-12">
+                        <p class = 'roboto bigText textCenter'>Founders</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <ng-container *ngFor = 'let founder of founders; let i = index' >
+                        <div class="col-12 col-md-6 col-lg-3 profileContent" 
+                        (mouseenter) = 'point(i)' (mouseleave) = 'leave(i)' (click) = 'clickOnFounder(i)'> 
+                            <div [ngStyle]="{'background-image': 'url('+ founder.image +')', 'border-color': founder.active? '#559500': '#263A4E'}" 
+                            class = 'profileImage'></div>
+                            <div class = 'roboto profileName' [ngStyle]="{'color': founder.active? '#559500': '#263A4E'}">User Useryan</div>
+                            <div class = 'profileText'>
+                                Hac facilisi ac vitae consec tetu commodo vel magna suspendisse on senectus pharetra magnfauc
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid backgroundAbout">
+    <div class="row">
+        <div class="col-12 p-0">
+            <div class="container">
+                <div class="row aboutContent">
+                    <div class="col-12 col-md-6">
+                        <img class = 'aboutImage' src = 'assets/images/about.png'>
+                    </div>
+                    <div class="col-12 col-md-6 pb-4 pt-4 toCenter">
+                        <div class = 'textSimple roboto'>About Us</div>
+                        <div class = 'bigText roboto lineHeight mt-2 mb-2'>We are world <br> number one Company</div>
+                        <div class = 'simpleText roboto mb-4'>
+                            Face male he light it moveth darkness winged eveni seas after life every gathering is forth two kind lesser i from seas him open him From creepeth after, life is above image from replenish behold great
+                        </div>
+                        <button class = 'btn readMore btn-outline-success roboto' [routerLink]="['/about']">Read more</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+.agendaContent{
+    margin-top: 80px;
+    min-height: calc(100vh - 180px);
+}
+.title{
+    color: #263A4E;
+    font-size: 24px;
+    font-weight: 900;
+}
+.imageContent{
+    padding-bottom: 20px;
+}
+.agendaImage{
+    width: 100%;
+}
+.textContent{
+    color: #5b5e77;
+    font-size: 15px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+.borderBottom{
+    height: 10px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.171);
+}

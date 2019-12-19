@@ -1,0 +1,25 @@
+.footer{
+    height: 100px;
+    background-color: #0E1424;
+}
+.social{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+.socialIcon{
+    color: white;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #334F6C;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+}
+.socialIcon:hover{
+    background-color: #559500;
+    color: #334F6C;
+}

@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 p-0 agendaContent">
+            <div class="container">
+                <div class="row mt-5" *ngFor = 'let agenda of agendaData; let i = index;'>
+                    <div class="col-12 mb-4 title">
+                        {{agenda.title}}
+                    </div>
+                    <div class="col-12 col-lg-5 imageContent">
+                        <img *ngIf = 'agenda.image' [src] = 'agenda.image' class = 'agendaImage'>
+                    </div>
+                    <div class="col-12 col-lg-7 textsContent">
+                        <div class="textContent" *ngFor = 'let text of agenda.texts'>
+                            {{text.text}}
+                        </div>
+                    </div>
+                    <div class="col-12 pl-5 pr-5">
+                        <div class = 'borderBottom'></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
