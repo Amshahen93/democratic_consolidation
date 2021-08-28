@@ -1,0 +1,87 @@
+.aboutUsHeder{
+   height: 500px;
+   margin-top: 80px;
+   background-image: url('/assets/images/about.jpg');
+   background-size: 100% auto;
+   background-position: top;
+   border-bottom: solid 3px #28a745;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 35px;
+   color: #28a745;
+   font-weight: 800;
+   background-repeat: no-repeat;
+}
+.aboutText{
+    font-size: 17px;
+    line-height: 30px;
+    color: #5b5e77;
+    text-align: justify;
+}
+.leftContent{
+    border-right: 1px solid #d2d8d7;
+    writing-mode: vertical-rl;
+    text-align: center;
+    font-size: 20px;
+    color: #263A4E;
+}
+.secondBackground{
+    background-image: url('/assets/images/about2.jpg');
+    background-size: 100% auto;
+    background-position: top;
+}
+.textContentBackground{
+    background-color: rgba(38, 58, 78, 0.425);
+    padding: 25px 10px;
+    line-height: 26px;
+    color: #ffffff;
+    text-align: justify;
+}
+.bigText {
+    font-size: 22px;
+    color: #263A4E;
+    display: none;
+    text-align: center;
+    font-weight: 800;
+    margin: 10px 0px;
+}
+.subTitle{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+@media only screen and (max-width: 1200px) {
+    .secondBackground{
+        background-size: auto 100%;
+    }
+}
+@media only screen and (max-width: 991px) {
+    .leftContent {
+        display: none;
+    }
+    .bigText{
+        display: block;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .aboutUsHeder{
+        height: 250px;
+    }
+    .textContentBackground{
+        line-height: 18px;
+        font-size: 14px;
+    }
+    .aboutText{
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .aboutUsHeder{
+        height: 200px;
+        font-size: 30px;
+        color: #28a745;
+        font-weight: 700;
+    }
+}

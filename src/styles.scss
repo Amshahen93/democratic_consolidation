@@ -1,7 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("assets/bootstrap/bootstrap.min.css"); 
+@import url('../node_modules/videogular2/fonts/videogular.css');
 
-.roboto {
+// ArmDzeragir.ttf
+
+.robotoCondensed{
     font-family: 'Roboto Condensed';
     font-weight: 800;
+}
+.roboto{
+    font-family: 'Roboto';
+}
+@font-face {
+    font-family: 'ArmFont';
+    src: url(/assets/fonts/SosNof.ttf);
+}
+.armFont {
+    font-family: 'ArmFont';
+}
+.P-0{
+    padding: 0px;
+}
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+
+.scroll-design::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+}
+/* Track */
+.scroll-design::-webkit-scrollbar-track {
+  background: #00000007;  
+  border-radius: 5px;
+}
+
+/* Handle */
+.scroll-design::-webkit-scrollbar-thumb {
+  background: #263a4e;
+  border-radius: 5px;
+  width: 6px;
+}
+/* Handle on hover */
+.scroll-design::-webkit-scrollbar-thumb:hover {
+  background: #263a4e;
+}
+.scroll-design {
+  scrollbar-width: thin;
+  scrollbar-color: #263a4e rgba(0, 0, 0, 0.034);
 }

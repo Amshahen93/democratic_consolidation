@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-5 mb-4"></div>
+        <div class="col-12">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 pageTitle">
+                        {{ 'founders.pageTitle' | translate }}
+                    </div>
+                </div>
+                <div class="row" #allContent>
+                    <div class="col-12 mb-5 mt-3" *ngFor = 'let founder of ("founders.data" | translate); let i = index'>
+                        <div class="imageContent">
+                            <div class="img" [ngStyle]="{'background-image': 'url(' + founder.image + ')'}"></div>
+                        </div>
+                        <div class = 'nameAndSurname mt-3'>
+                            <span class = 'mr-3'>{{ founder.name }}</span>
+                            <span>{{ founder.surname }}</span>
+                        </div>
+                        <div class = 'profession mt-1'>
+                            <span>{{ founder.profession }}</span>
+                        </div>
+                        <div class="text mt-2" *ngFor = 'let text of founder.texts'>
+                            {{ text }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

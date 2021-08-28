@@ -1,0 +1,22 @@
+.popup{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 100000;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.192);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup-content{
+    max-height: 80vh;
+    max-width: 80vw;
+}
+.turnButton{
+    color: #263A4E;
+    font-size: 35px;
+    background-color: rgba(255, 255, 255, 0.253);
+    box-shadow: 0px, 0px, 5px, 0px, rgba(0, 0, 0, .2) !important;
+}

@@ -1,0 +1,58 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 p-0 agendaContent">
+            <div class="container" #allContent>
+                <div class="row mt-5 pt-5" *ngFor = 'let agenda of ("agenda.data" | translate); let i = index;'>
+                    <div class="col-12 mt-4 mb-4 title">
+                        {{agenda.title}}
+                    </div>
+                    <div class="col-12 col-lg-5 imageContent">
+                        <img *ngIf = 'agenda.image' [src] = 'agenda.image' class = 'agendaImage' (click) = 'showImage(agenda.image)'>
+                        <div *ngIf = 'agenda.images' class = 'images'>
+                            <img *ngFor = 'let image of agenda.images; let j = index; let last = last' 
+                            [ngClass]="{'bigImage': last && i % 2 === 0 && agenda.images.length < 4, 'smallImage':  agenda.images.length > 4 && agenda.images.length < 12, 'extraSmall': agenda.images.length > 12}" 
+                            class = 'image' [src] = 'image'
+                            (click) = 'showImage(image, agenda.images, j)'>
+                        </div>
+                        <div *ngIf = 'agenda.video' class = 'video'>
+                            <vg-player>
+                                <vg-overlay-play></vg-overlay-play>
+                                <vg-buffering></vg-buffering>                         
+                                <vg-controls>
+                                    <vg-play-pause></vg-play-pause>
+                                    <vg-time-display vgProperty="current" vgFormat="hh:mm:ss"></vg-time-display>
+                                    <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+                                    <vg-time-display vgProperty="total" vgFormat="hh:mm:ss"></vg-time-display>
+                                    <vg-volume></vg-volume>
+                                    <vg-fullscreen></vg-fullscreen>
+                                </vg-controls>
+                                <vg-scrub-bar>
+                                    <vg-scrub-bar-current-time [vgSlider]="true"></vg-scrub-bar-current-time>
+                                    <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+                                </vg-scrub-bar>   
+                                <video [vgMedia]="media" #media [id]="'singleVideo'+i"  class = 'videoTag' crossorigin>
+                                    <source [src]="agenda.video" type="video/mp4">
+                                </video>
+                            </vg-player>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-7 textsContent">
+                        <div class="textContent" *ngFor = 'let text of agenda.texts'>
+                            {{text.text}}
+                        </div>
+                        <div *ngIf = 'agenda.link' class="VideoLink" >
+                            <a [href] = 'agenda.link'>Հղում</a>
+                        </div>
+                    </div>
+                    <div class="col-12 date">{{createDate(agenda.date)}}</div>
+                    <div class="col-12 pl-5 pr-5">
+                        <div class = 'borderBottom'></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-popup [open] = 'enlargeImage' [imagesList] = 'isImageList' [lastOrFirst] = 'lastOrFirst' (turn) = 'turnImage($event)'>
+    <img *ngIf = 'videoOrImage === "image"' class = 'Image'  [src] = 'bigImage'>
+</app-popup>

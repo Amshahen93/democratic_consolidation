@@ -1,7 +1,11 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 p-0">
-            <app-header></app-header>
+        <div class="col-12 p-0 scroll-design scrollableContent" #scrollableContent (scroll) = 'onScroll(scrollableContent.scrollTop)'>
+            <div class="header-content">
+                <app-header [background] = 'scroll'></app-header>
+            </div>
+            <router-outlet></router-outlet>
+            <app-footer></app-footer>
         </div>
     </div>
 </div>

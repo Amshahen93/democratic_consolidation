@@ -1,14 +1,43 @@
-<div class = 'header'>
-    <div class = 'container'>
+<div class = 'header' [ngClass]="{'headerBackground': background || backgroundFixed}">
+    <div class = 'container-fluid'>
         <div class="row">
-            <div class="col-12 p-0 d-flex justify-content-between">
+            <div class="col-12 p-0 d-flex justify-content-between align-items-center">
                 <div class="icon">
-                    <p class = 'iconText roboto'>ARCLABS</p>
+                   <img class = 'logo' [src] = '"header.logo" | translate'>
                 </div>
-                <div class="navbar">
-                    
+                <div class = 'navbarContent'>
+                        <div class = 'navbarButton roboto unselectable' 
+                        *ngFor = 'let button of menuButtons; let i = index;' 
+                        [ngClass]="{'active': button.active}"
+                        (click) = 'clickNavbarButton(i)'>
+                            {{ ('header.menuNames' | translate)[i] }}
+                        </div>
+                    <div class = 'navbarOpenButton' (click) = 'openHeader()'>
+                        <div class = 'line'></div>
+                        <div class = 'line'></div>
+                        <div class = 'line'></div>
+                    </div>
+                    <div class = 'languageContent'>
+                        <button class = 'btn languageButton' (click) = 'openChangeLanguage()'>
+                            <i class="fa fa-globe" aria-hidden="true"></i>
+                        </button>
+                        <div class = 'languagePopup' *ngIf = 'changeLanguage' (click) = 'stopClick($event)'>
+                            <div class = 'language' *ngFor = 'let language of languages'
+                            [ngClass]="{'active': language.name === selectedLanguage}" 
+                            (click) = 'selectLanguage(language.name)'>
+                                {{ language.name }}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class = 'headerButtonsMobile unselectable' [ngStyle]="{'height': headerIsOpen? 40 * menuButtons.length + 'px': '0px'}" >
+        <div class = 'menuButtonMobile roboto' *ngFor = 'let button of menuButtons; let i = index;'
+            [ngClass]="{'active': button.active}"
+            (click) = 'clickNavbarButton(i)'>
+            {{ ('header.menuNames' | translate)[i] }}
         </div>
     </div>
 </div>

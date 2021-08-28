@@ -1,0 +1,67 @@
+<div class="container-fluid" #testimonialContent>
+  <div class="row">
+    <div class="col-12 p-0 allContent">
+      <div class="testimonialContent noselect" #sliderContent (mousemove) = 'sliderMuve($event)' 
+      (mousedown) = 'mousedownInSlider($event)' (mouseup) = 'leftSlider()' (mouseleave) = 'leftSlider()'> 
+          <div class = 'comentContent' *ngFor = 'let item of sliderData; let i = index;' [@sliderAnimations] = 'animationsStates[i]' 
+          (click) = 'onChangeRout(i)'>
+            <div class="bigContent">
+              <div class="text-content">
+                {{item.texts[0].text}}
+              </div>
+              <div class="textHiden"></div>
+              <div class="userInfo">
+                <img class = 'userLogo' [src] = 'item.image? item.image: item.images && item.images[0]? item.images[0]: "assets/images/posts/0.jpg"'>
+                <div class = 'userName'>{{item.title}}</div>
+              </div>
+            </div>
+          </div>
+      </div>
+         <!-- Buttons -->
+         <div class = 'buttonsContent'>
+            <div class="turnButtonLeft noselect" (click) = 'clickToLeft()'>
+              <div class='arrowContentLeft'>
+                    <svg class = 'nextToLeft' width="92px" height="12px" viewBox="0 0 92 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <!-- Generator: sketchtool 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+                        <title>B3A33CFE-CE79-468B-940D-71B2DA72DABE@svg</title>
+                        <desc>Created with sketchtool.</desc>
+                        <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Landlords-UI" transform="translate(-1463.000000, -5274.000000)">
+                                <g id="Testimonials" transform="translate(215.000000, 4614.000000)">
+                                    <g id="next" transform="translate(1218.000000, 630.000000)">
+                                        <g transform="translate(76.000000, 36.000000) scale(-1, 1) translate(-76.000000, -36.000000) translate(30.000000, 27.000000)" id="Shape">
+                                            <polygon points="7 0 25 0 25 18 7 18"></polygon>
+                                            <polygon fill="#1E2342" fill-rule="nonzero" points="92 8.25 2.87 8.25 7.06 4.06 6 3 0 9 6 15 7.06 13.94 2.87 9.75 92 9.75"></polygon>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+              </div>
+            </div>
+            <div class="turnButtonRight noselect" (click) = 'clickToRight()'>
+              <div class='arrowContentRight'>
+                <svg class = 'nextToRight' width="92px" height="12px" viewBox="0 0 92 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <!-- Generator: sketchtool 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+                  <title>B3A33CFE-CE79-468B-940D-71B2DA72DABE@svg</title>
+                  <desc>Created with sketchtool.</desc>
+                  <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="Landlords-UI" transform="translate(-1463.000000, -5274.000000)">
+                          <g id="Testimonials" transform="translate(215.000000, 4614.000000)">
+                              <g id="next" transform="translate(1218.000000, 630.000000)">
+                                  <g transform="translate(76.000000, 36.000000) scale(-1, 1) translate(-76.000000, -36.000000) translate(30.000000, 27.000000)" id="Shape">
+                                      <polygon points="7 0 25 0 25 18 7 18"></polygon>
+                                      <polygon fill="#1E2342" fill-rule="nonzero" points="92 8.25 2.87 8.25 7.06 4.06 6 3 0 9 6 15 7.06 13.94 2.87 9.75 92 9.75"></polygon>
+                                  </g>
+                              </g>
+                          </g>
+                      </g>
+                  </g>
+              </svg>
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>

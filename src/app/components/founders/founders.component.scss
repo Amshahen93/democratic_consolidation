@@ -1,0 +1,35 @@
+.pageTitle{
+    text-align: center;
+    font-size: 28px;
+    font-weight: 800;
+    color: #263A4E;
+    padding: 40px 20px;
+}
+.imageContent{
+    display: flex;
+    justify-content: center;
+}
+.img{
+    width: 250px;
+    height: 250px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: solid 1px #263A4E;
+    background-position: center;
+}
+.nameAndSurname{
+    color: #263A4E;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 800;
+}
+.profession{
+    color: #263A4E;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+}
+.text{
+    text-align: center;
+}

@@ -1,0 +1,92 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 forHeader"></div>
+        <div class="col-12 background">
+            <div class="fon"></div>
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="phoneContent">
+                        <div class = 'iconAndTitle'>
+                            Coll Us
+                            <i class="fa fa-phone phoneIcon" aria-hidden="true"></i>
+                        </div>
+                        <div class="phoneNumbersContent">
+                            <div class = 'name'>
+                                user<br>
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                            <div class="phoneNumber">
+                                <a class="phoneNumber"  href = "tel:+37455555555">
+                                    +37499338811
+                                </a>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="phoneContent">
+                        <div class = 'iconAndTitle'>
+                            Write Us
+                            <i class="fa fa-globe phoneIcon" aria-hidden = "true"></i>
+                        </div>
+                        <div class="phoneNumbersContent">
+                            <div class = 'name'>
+                                user<br>
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                            <div class="phoneNumber">
+                                <a class="phoneNumber" href = "mailto: abc@example.com">
+                                    user1968@mail.com
+                                </a>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="phoneContent">
+                        <div class = 'iconAndTitle'>
+                            Fined us i facebook
+                            <i class="fa fa-facebook phoneIcon" aria-hidden = "true"></i>
+                        </div>
+                        <div class="phoneNumbersContent">
+                            <div class="phoneNumber">
+                                <a class = 'phoneNumber' href = 'https://www.facebook.com/'>
+                                    facebook.com
+                                </a>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-12 col-md-8 pr-md-5 displaying">
+                    <div class="writeUsContent">
+                        <div class="title">
+                            Դուք կարող եք նաև գրել մեզ
+                        </div>
+                        <div class="inputContent" [formGroup]="formGroup">
+                           <input type="text" class="form-control input" formControlName="name" placeholder = "Անուն" 
+                           [ngClass]="{'errorStyle': formGroup.controls.name.errors && formGroup.controls.name.touched}"> 
+                           <div class = 'errorMassageContent'>
+                                <div class="errorMassage" *ngIf = 'formGroup.controls.name.errors && formGroup.controls.name.touched'>
+                                    Գրեք ձեր անունը
+                                </div>
+                           </div>
+                           <input type="text" class="form-control input" placeholder = "Էլ հասցե" formControlName="email" 
+                           [ngClass]="{'errorStyle': formGroup.controls.email.errors && formGroup.controls.email.touched}"> 
+                           <div class = 'errorMassageContent'>
+                                <div class="errorMassage" *ngIf = 'formGroup.controls.email.errors && formGroup.controls.email.touched'>
+                                    Գրեք ճիշտ էլ հասցե
+                                </div>
+                            </div>
+                           <input type="text" class="form-control input" placeholder = "Հեռախոսահամար" formControlName="phone">
+                           <div class = 'errorMassageContent'></div> 
+                           <textarea placeholder = 'Հաղորդակրություն' class = 'form-control input' formControlName="massage"
+                           [ngClass]="{'errorStyle':  formGroup.controls.massage.errors && formGroup.controls.massage.touched}" cols="30" rows="7"></textarea>
+                           <div class = 'errorMassageContent'>
+                                <div class="errorMassage" *ngIf = 'formGroup.controls.massage.errors && formGroup.controls.massage.touched'>
+                                    Հաղորդագրությունը պարտադիր է
+                                </div>
+                            </div>
+                           <button class="btn readMore btn-outline-success" (click) = 'onSendData()' [disabled] = 'disabledButton'>Ուղարկել</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class = 'popup' *ngIf = 'showPopup' (click) = 'closePopup()'>
+    <div class = 'content'>
+        <button class = 'btn turnButton mr-5' *ngIf = 'imagesList && lastOrFirst !== "first"' (click) = 'turnImage($event, "left")'>
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </button>
+        <span (click) = 'turnImage($event, "right")'>
+            <ng-content></ng-content>
+        </span>
+        <button class = 'btn turnButton ml-5' *ngIf = 'imagesList && lastOrFirst !== "last"' (click) = 'turnImage($event, "right")'>
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </button>
+    </div>
+</div>
