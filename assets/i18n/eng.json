@@ -1,0 +1,40 @@
+{
+    "header": {
+        "menuNames": ["Home", "Agenda", "Projects", "Founders", "About us", "Contact"],
+        "logo": "assets/images/iconEng.png"
+    },
+    "home": {
+        "agenda": {
+            "title": "Agenda",
+            "subtitle": "Happy Clients"
+        },
+        "projects": {
+            "title": "Projects"
+        },
+        "founders": {
+            "title": "Founders"
+        },
+        "aboutUs": {
+            "title": "About Us",
+            "button": "Read more"
+        }
+    },
+    "agenda": {
+
+    },
+    "projects": {
+        "pageTitle": "Our projects"
+    }, 
+    "founders": {
+        "pageTitle": "Founders"
+    },
+    "about_us": {
+        "pageTitle": "About us"
+    },
+    "contact": {
+        "pageTitle": "Contact with us"
+    },
+    "footer": {
+        
+    }
+}
